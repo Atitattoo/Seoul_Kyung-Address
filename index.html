@@ -5,137 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEOUL KYUNG - Guide</title>
     <style>
-        /* 배경 및 전체 레이아웃 리모델링 */
+        /* 글로벌 웹사이트 아이덴티티 반영 */
         body {
             margin: 0;
             padding: 0;
-            background-color: #0b0b0b;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #000000; /* 완전한 블랙으로 통일 */
+            font-family: "Garamond", "Didot", "Times New Roman", serif, -apple-system, BlinkMacSystemFont;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
         }
 
         .sk-guide-wrapper {
             width: 100%;
-            max-width: 420px;
-            padding: 40px 24px;
+            max-width: 440px;
+            padding: 50px 24px;
             box-sizing: border-box;
             color: #ffffff;
             text-align: center;
         }
 
-        /* 서울경 로고 스타일 */
+        /* seoulkyung.com 시그니처 폰트 스타일 */
         .sk-logo {
-            font-size: 26px;
-            font-weight: 800;
-            letter-spacing: 4px;
-            margin-bottom: 45px;
+            font-size: 24px;
+            font-weight: 300; /* 가늘고 고급스러운 라인 */
+            letter-spacing: 7px; /* 넓은 자간으로 하이엔드 감성 연출 */
+            margin-bottom: 60px;
             color: #ffffff;
             text-transform: uppercase;
-            font-family: 'Times New Roman', Times, serif, sans-serif;
         }
 
-        /* 언어 선택 첫 화면 중앙 배치 */
+        /* 웹사이트 스타일의 미니멀 언어 선택 메뉴 */
         #sk-lang-selection {
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 16px;
             justify-content: center;
+            padding: 0 20px;
         }
 
         .sk-lang-card {
-            background: #161616;
-            border: 1px solid #262626;
-            padding: 18px;
-            border-radius: 10px;
+            background: transparent;
+            border-bottom: 1px solid #1a1a1a; /* 선으로만 이루어진 미니멀 디자인 */
+            padding: 16px 0;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 14px;
-            font-weight: 500;
-            color: #999;
-            letter-spacing: 1px;
+            transition: all 0.4s ease;
+            font-size: 13px;
+            font-weight: 300;
+            color: #777777;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
 
         .sk-lang-card:hover {
-            border-color: #ffffff;
+            border-bottom-color: #ffffff;
             color: #ffffff;
-            background: #1f1f1f;
         }
 
-        /* 상세 안내 페이지 스타일 */
+        /* 상세 안내 레이아웃 고도화 */
         #sk-content-area {
             display: none;
             text-align: left;
+            font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif; /* 본문은 가독성 위주 */
         }
 
         .sk-back-btn {
             background: none;
-            border: 1px solid #333;
-            color: #888;
-            padding: 8px 16px;
-            border-radius: 6px;
+            border: none;
+            color: #555555;
+            padding: 0;
             cursor: pointer;
             font-size: 12px;
-            margin-bottom: 30px;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
             transition: 0.2s;
+            display: inline-block;
+            border-bottom: 1px solid transparent;
         }
 
         .sk-back-btn:hover {
-            border-color: #666;
-            color: #fff;
+            color: #ffffff;
+            border-bottom: 1px solid #ffffff;
         }
 
         .sk-info-section {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .sk-info-title {
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #fff;
-            border-bottom: 1px solid #222;
-            padding-bottom: 6px;
-            letter-spacing: 1px;
+            font-size: 12px;
+            font-weight: 400;
+            margin-bottom: 14px;
+            color: #ffffff;
+            border-bottom: 1px solid #111111;
+            padding-bottom: 8px;
+            letter-spacing: 2px;
+            font-family: "Garamond", "Times New Roman", serif;
         }
 
         .sk-address-box {
-            background: #141414;
-            padding: 24px;
-            border-radius: 10px;
-            border: 1px solid #222;
+            background: #0a0a0a;
+            padding: 26px;
+            border-radius: 0px; /* 라운딩을 없애거나 최소화하여 모던함 강조 */
+            border: 1px solid #161616;
             text-align: center;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         .sk-condition-box {
-            background: #141414;
-            padding: 24px;
-            border-radius: 10px;
-            border: 1px solid #222;
-            font-size: 13.5px;
-            line-height: 1.8;
-            color: #b3b3b3;
+            background: #0a0a0a;
+            padding: 26px;
+            border-radius: 0px;
+            border: 1px solid #161616;
+            font-size: 13px;
+            line-height: 1.9;
+            color: #999999;
             text-align: left;
         }
 
         .sk-notice-box {
-            border-left: 3px solid #ffcc00;
-            background: #1a1915;
-            padding: 24px;
-            border-radius: 0 10px 10px 0;
-            font-size: 14px;
-            line-height: 1.7;
-            border-top: 1px solid #222;
-            border-right: 1px solid #222;
-            border-bottom: 1px solid #222;
+            border-left: 2px solid #ffffff; /* 강렬한 노란색 대신 화이트/그레이로 정돈 */
+            background: #0a0a0a;
+            padding: 26px;
+            font-size: 13.5px;
+            line-height: 1.8;
+            border-top: 1px solid #161616;
+            border-right: 1px solid #161616;
+            border-bottom: 1px solid #161616;
+            color: #999999;
         }
 
         .sk-lang-divider {
-            margin: 14px 0;
-            border-top: 1px dashed #333;
+            margin: 16px 0;
+            border-top: 1px dashed #222222;
         }
 
         .sk-map-buttons {
@@ -150,26 +155,34 @@
             align-items: center;
             justify-content: center;
             padding: 14px 0;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 700;
+            font-size: 11px;
+            font-weight: 600;
             text-decoration: none;
             color: #ffffff !important; 
-            transition: opacity 0.2s ease;
-        }
-
-        .sk-map-btn:hover, .sk-web-btn:hover {
-            opacity: 0.85;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
         }
 
         .btn-n { background-color: #03C75A; }
         .btn-g { background-color: #4285F4; }
 
+        .sk-map-btn:hover {
+            opacity: 0.85;
+        }
+
         .sk-web-btn {
             width: 100%;
-            background-color: #1c1c1c;
-            border: 1px solid #333;
-            letter-spacing: 1px;
+            background-color: transparent;
+            border: 1px solid #222222;
+            color: #777777 !important;
+            font-family: "Garamond", "Times New Roman", serif;
+            letter-spacing: 2px;
+        }
+
+        .sk-web-btn:hover {
+            border-color: #ffffff;
+            color: #ffffff !important;
+            background-color: #0a0a0a;
         }
 
         .sk-lang-block { display: none; }
@@ -178,21 +191,21 @@
 <body>
 
 <div class="sk-guide-wrapper">
-    <!-- 메인 브랜드 타이틀 로고 -->
+    <!-- 시그니처 로고 타입 -->
     <div class="sk-logo">SEOUL KYUNG</div>
 
-    <!-- 1화면: 언어 선택 메뉴 -->
+    <!-- 1화면: 공식 웹사이트 핏 언어 선택 목록 -->
     <div id="sk-lang-selection">
-        <div class="sk-lang-card" onclick="showSkContent('ko')">한국어 (KOREAN)</div>
+        <div class="sk-lang-card" onclick="showSkContent('ko')">KOREAN</div>
         <div class="sk-lang-card" onclick="showSkContent('en')">ENGLISH</div>
-        <div class="sk-lang-card" onclick="showSkContent('ja')">日本語</div>
-        <div class="sk-lang-card" onclick="showSkContent('zh')">简体中文</div>
-        <div class="sk-lang-card" onclick="showSkContent('tw')">繁體中文</div>
+        <div class="sk-lang-card" onclick="showSkContent('ja')">JAPANESE</div>
+        <div class="sk-lang-card" onclick="showSkContent('zh')">CHINESE (SIMPLIFIED)</div>
+        <div class="sk-lang-card" onclick="showSkContent('tw')">CHINESE (TRADITIONAL)</div>
     </div>
 
-    <!-- 2화면: 안내 상세 내역 -->
+    <!-- 2화면: 상세 정보 레이아웃 -->
     <div id="sk-content-area">
-        <button class="sk-back-btn" onclick="goSkBack()">← BACK</button>
+        <button class="sk-back-btn">← BACK</button>
 
         <!-- 0. 방문 전 주의사항 -->
         <div class="sk-info-section">
@@ -211,7 +224,7 @@
                 <div class="sk-lang-block ja">
                     <span style="color: #fff; font-weight: 600;">SEOUL KYUNG</span>をご愛顧いただき、誠にありがとうございます。<br>
                     最上の仕上がりをお届けするため、ご来店前日は十分な睡眠をお取りいただき、万全의體調でお越しくださいますようお願い申し上げます。<br><br>
-                    また、<span style="color: #ff5555; font-weight: 600;">施術前日のサプリメントや栄養剤、健康食品などの服用は（必須医薬品を除き）固くお断りいたします。</span>これらは施術のプロセスにおいて予期せぬ影響を及ぼす可能性がございます。安全かつ円滑な施術のため、何卒ご理解とご協力をお願い申し上げます。
+                    また、<span style="color: #ff5555; font-weight: 600;">施術前日のサプリメントや栄養剤、健康食品などの服用は（必須医薬品を除き）固くお断りいたします。</span>これらは施術의プロセスにおいて予期せぬ影響を及ぼす可能性がございます。安全かつ円滑な施術のため、何卒ご理解とご協力をお願い申し上げます。
                 </div>
                 <div class="sk-lang-block zh">
                     衷心感谢您光临 <span style="color: #fff; font-weight: 600;">SEOUL KYUNG</span>。<br>
@@ -221,7 +234,7 @@
                 <div class="sk-lang-block tw">
                     衷心感謝您光臨 <span style="color: #fff; font-weight: 600;">SEOUL KYUNG</span>。<br>
                     為了確保達到最佳的紋身效果，請在到店前保持充足的睡眠，並調整至良好的身體狀態。<br><br>
-                    此外，<span style="color: #ff5555; font-weight: 600;">為確保安全，紋身前一天除必須服用的醫療藥品外，嚴禁服用任何保健品、維他命及營養劑。</span>這些成分可能會在操作過程中引發不可預知的反應。為了您的安全與完美的紋身作品，請務必遵守。
+                    此外，<span style="color: #ff5555; font-weight: 600;">為確保安全，紋身前一天除必須服用的醫療藥品外，嚴禁服用任何保健品、維太命及營養劑。</span>這些成分可能會在操作過程中引發不可預知的反應。為了您的安全與完美的紋身作品，請務必遵守。
                 </div>
             </div>
         </div>
@@ -231,32 +244,32 @@
             <div class="sk-info-title">ADDRESS</div>
             <div class="sk-address-box">
                 <div class="sk-lang-block ko">
-                    <strong style="font-size: 17px; display: block; color: #fff; margin-bottom: 4px;">서울특별시 마포구 상수동 321-6, 1층</strong>
-                    <span style="font-size: 13px; color: #aaa;">상수역 도보 2분 거리</span>
+                    <strong style="font-size: 16px; display: block; color: #fff; margin-bottom: 4px; font-weight: 500;">서울특별시 마포구 상수동 321-6, 1층</strong>
+                    <span style="font-size: 13px; color: #666;">상수역 도보 2분 거리</span>
                 </div>
                 <div class="sk-lang-block en">
-                    <strong style="font-size: 16px; display: block; color: #fff; margin-bottom: 4px;">1F, 321-6, Sangsu-dong, Mapo-gu, Seoul</strong>
-                    <span style="font-size: 12px; color: #aaa; display: block; margin-bottom: 8px;">(A 2-minute walk from Sangsu Station)</span>
+                    <strong style="font-size: 15px; display: block; color: #fff; margin-bottom: 4px; font-weight: 500;">1F, 321-6, Sangsu-dong, Mapo-gu, Seoul</strong>
+                    <span style="font-size: 12px; color: #666; display: block; margin-bottom: 8px;">(A 2-minute walk from Sangsu Station)</span>
                     <div class="sk-lang-divider"></div>
-                    <span style="color: #555; font-size: 12px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
+                    <span style="color: #444; font-size: 11px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
                 </div>
                 <div class="sk-lang-block ja">
-                    <strong style="font-size: 16px; display: block; color: #fff; margin-bottom: 4px;">ソウル特別市 麻浦区 上水洞 321-6, 1階</strong>
-                    <span style="font-size: 12px; color: #aaa; display: block; margin-bottom: 8px;">(上水駅から徒歩2分)</span>
+                    <strong style="font-size: 15px; display: block; color: #fff; margin-bottom: 4px; font-weight: 500;">ソウル特別市 麻浦区 上水洞 321-6, 1階</strong>
+                    <span style="font-size: 12px; color: #666; display: block; margin-bottom: 8px;">(上水駅から徒歩2分)</span>
                     <div class="sk-lang-divider"></div>
-                    <span style="color: #555; font-size: 12px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
+                    <span style="color: #444; font-size: 11px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
                 </div>
                 <div class="sk-lang-block zh">
-                    <strong style="font-size: 16px; display: block; color: #fff; margin-bottom: 4px;">首尔特别市 麻浦区 上水洞 321-6, 1楼</strong>
-                    <span style="font-size: 12px; color: #aaa; display: block; margin-bottom: 8px;">(上水站步行2分钟)</span>
+                    <strong style="font-size: 15px; display: block; color: #fff; margin-bottom: 4px; font-weight: 500;">首尔特别市 麻浦区 上水洞 321-6, 1楼</strong>
+                    <span style="font-size: 12px; color: #666; display: block; margin-bottom: 8px;">(上水站步行2分钟)</span>
                     <div class="sk-lang-divider"></div>
-                    <span style="color: #555; font-size: 12px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
+                    <span style="color: #444; font-size: 11px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
                 </div>
                 <div class="sk-lang-block tw">
-                    <strong style="font-size: 16px; display: block; color: #fff; margin-bottom: 4px;">首爾特別市 麻浦區 上水洞 321-6, 1樓</strong>
-                    <span style="font-size: 12px; color: #aaa; display: block; margin-bottom: 8px;">(上水站步行2分鐘)</span>
+                    <strong style="font-size: 15px; display: block; color: #fff; margin-bottom: 4px; font-weight: 500;">首爾特別市 麻浦區 上水洞 321-6, 1樓</strong>
+                    <span style="font-size: 12px; color: #666; display: block; margin-bottom: 8px;">(上水站步行2分鐘)</span>
                     <div class="sk-lang-divider"></div>
-                    <span style="color: #555; font-size: 12px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
+                    <span style="color: #444; font-size: 11px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
                 </div>
             </div>
         </div>
@@ -266,27 +279,27 @@
             <div class="sk-info-title">DIRECTION</div>
             <div class="sk-notice-box">
                 <div class="sk-lang-block ko">
-                    건물 도착 시, <span style="color: #ffcc00; font-weight: 700;">4면 주차 차량들이 주차되어 있는 주차장 안쪽</span>으로 들어오시면 입구가 있습니다.
+                    건물 도착 시, <span style="color: #ffffff; font-weight: 600; text-decoration: underline;">4면 주차 차량들이 주차되어 있는 주차장 안쪽</span>으로 들어오시면 입구가 있습니다.
                 </div>
                 <div class="sk-lang-block en">
-                    Upon arriving at the building, please <span style="color: #ffcc00; font-weight: 700;">walk into the inner area of the parking lot</span> surrounded by cars on all four sides to find the entrance.
+                    Upon arriving at the building, please <span style="color: #ffffff; font-weight: 600; text-decoration: underline;">walk into the inner area of the parking lot</span> surrounded by cars on all four sides to find the entrance.
                     <div class="sk-lang-divider"></div>
-                    <span style="color: #888; font-size: 13px;">[국문 안내] 건물 도착 시, 4면 주차 차량들이 주차되어 있는 주차장 안쪽으로 들어오시면 입구가 있습니다.</span>
+                    <span style="color: #555; font-size: 12px;">[국문 안내] 건물 도착 시, 4면 주차 차량들이 주차되어 있는 주차장 안쪽으로 들어오시면 입구가 있습니다.</span>
                 </div>
                 <div class="sk-lang-block ja">
-                    建物に到着されましたら、車が四方に停まっている<span style="color: #ffcc00; font-weight: 700;">駐車場の奥の方へ</span>お進みください。奥に入り口がございます。
+                    建物に到着されましたら、車が四方に停まっている<span style="color: #ffffff; font-weight: 600; text-decoration: underline;">駐車場の奥の方へ</span>お進みください。奥に入り口がございます。
                     <div class="sk-lang-divider"></div>
-                    <span style="color: #888; font-size: 13px;">[국문 안내] 건물 도착 시, 4면 주차 차량들이 주차되어 있는 주차장 안쪽으로 들어오시면 입구가 있습니다.</span>
+                    <span style="color: #555; font-size: 12px;">[국문 안내] 건물 도착 시, 4면 주차 차량들이 주차되어 있는 주차장 안쪽으로 들어오시면 입구가 있습니다.</span>
                 </div>
                 <div class="sk-lang-block zh">
-                    到达大楼后，请往四面停放车辆的<span style="color: #ffcc00; font-weight: 700;">停车场内侧 (안쪽)</span> 走进来，即可看到入口。
+                    到达大楼后，请往四面停放车辆的<span style="color: #ffffff; font-weight: 600; text-decoration: underline;">停车场内侧 (안쪽)</span> 走进来，即可看到入口。
                     <div class="sk-lang-divider"></div>
-                    <span style="color: #888; font-size: 13px;">[국문 안내] 건물 도착 시, 4면 주차 차량들이 주차되어 있는 주차장 안쪽으로 들어오시면 입구가 있습니다.</span>
+                    <span style="color: #555; font-size: 12px;">[국문 안내] 건물 도착 시, 4면 주차 차량들이 주차되어 있는 주차장 안쪽으로 들어오시면 입구가 있습니다.</span>
                 </div>
                 <div class="sk-lang-block tw">
-                    到達大樓後，請往四面停放車輛的<span style="color: #ffcc00; font-weight: 700;">停車場內側 (안쪽)</span> 走進來，即可看到入口。
+                    到達大樓後，請往四面停放車輛的<span style="color: #ffffff; font-weight: 600; text-decoration: underline;">停車場內側 (안쪽)</span> 走進來，即可看到入口。
                     <div class="sk-lang-divider"></div>
-                    <span style="color: #888; font-size: 13px;">[국문 안내] 건물 도착 시, 4면 주차 차량들이 주차되어 있는 주차장 안쪽으로 들어오시면 입구가 있습니다.</span>
+                    <span style="color: #555; font-size: 12px;">[국문 안내] 건물 도착 시, 4면 주차 차량들이 주차되어 있는 주차장 안쪽으로 들어오시면 입구가 있습니다.</span>
                 </div>
             </div>
         </div>
@@ -312,10 +325,12 @@
         const selectedElements = document.querySelectorAll('.sk-lang-block.' + lang);
         selectedElements.forEach(el => el.style.display = 'block');
     }
-    function goSkBack() {
+    
+    // 백버튼 스크립트 수정
+    document.querySelector('.sk-back-btn').addEventListener('click', function() {
         document.getElementById('sk-lang-selection').style.display = 'flex';
         document.getElementById('sk-content-area').style.display = 'none';
-    }
+    });
 </script>
 
 </body>
