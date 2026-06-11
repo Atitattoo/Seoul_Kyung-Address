@@ -1,0 +1,253 @@
+<style>
+    .sk-guide-wrapper {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        color: #ffffff;
+        font-family: inherit;
+        text-align: center;
+    }
+    #sk-lang-selection {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .sk-lang-card {
+        background: #1a1a1a;
+        border: 1px solid #333;
+        padding: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+        font-size: 15px;
+        color: #ccc;
+    }
+    .sk-lang-card:hover {
+        border-color: #ffcc00;
+        color: #fff;
+    }
+    #sk-content-area {
+        display: none;
+        text-align: left;
+    }
+    .sk-back-btn {
+        background: none;
+        border: 1px solid #444;
+        color: #888;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 11px;
+        margin-bottom: 20px;
+    }
+    .sk-info-section {
+        margin-bottom: 25px;
+    }
+    .sk-info-title {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #fff;
+        border-bottom: 1px solid #333;
+        padding-bottom: 5px;
+    }
+    .sk-address-box {
+        background: #222;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #333;
+        text-align: center;
+        line-height: 1.6;
+    }
+    .sk-condition-box {
+        background: #161616;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #2a2a2a;
+        font-size: 13.5px;
+        line-height: 1.8;
+        color: #ddd;
+        text-align: left;
+    }
+    .sk-notice-box {
+        border-left: 3px solid #ffcc00;
+        background: #1a1915;
+        padding: 20px;
+        border-radius: 0 8px 8px 0;
+        font-size: 14px;
+        line-height: 1.7;
+        border-top: 1px solid #333;
+        border-right: 1px solid #333;
+        border-bottom: 1px solid #333;
+    }
+    .sk-lang-divider {
+        margin: 12px 0;
+        border-top: 1px dashed #444;
+    }
+    .sk-map-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+    .sk-map-btn, .sk-web-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 0;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration: none;
+        color: #ffffff !important; 
+        transition: opacity 0.2s ease;
+    }
+    .sk-map-btn:hover, .sk-web-btn:hover {
+        opacity: 0.85;
+    }
+    .btn-n { background-color: #03C75A; }
+    .btn-g { background-color: #4285F4; }
+    .sk-web-btn {
+        width: 100%;
+        background-color: #2a2a2a;
+        border: 1px solid #444;
+        letter-spacing: 1px;
+    }
+    .sk-lang-block { display: none; }
+</style>
+
+<div class="sk-guide-wrapper">
+    <div id="sk-lang-selection">
+        <div class="sk-lang-card" onclick="showSkContent('ko')">한국어 (KOREAN)</div>
+        <div class="sk-lang-card" onclick="showSkContent('en')">English</div>
+        <div class="sk-lang-card" onclick="showSkContent('ja')">日本語</div>
+        <div class="sk-lang-card" onclick="showSkContent('zh')">简体中文</div>
+        <div class="sk-lang-card" onclick="showSkContent('tw')">繁體中文</div>
+    </div>
+
+    <div id="sk-content-area">
+        <button class="sk-back-btn" onclick="goSkBack()">← Back</button>
+
+        <!-- 0. 방문 전 주의사항 -->
+        <div class="sk-info-section">
+            <div class="sk-info-title">NOTICE / 방문 전 안내사항</div>
+            <div class="sk-condition-box">
+                <div class="sk-lang-block ko">
+                    저희 <span style="color: #fff; font-weight: 600;">SEOUL KYUNG</span>을 찾아주신 고객님께 깊은 감사의 말씀을 드립니다.<br>
+                    최상의 작업 결과를 위해, 방문 전 충분한 수면을 취하시고 좋은 컨디션을 유지해 주시기를 당부드립니다.<br><br>
+                    또한, <span style="color: #ff5555; font-weight: 600;">시술 전날에는 필수 의약품을 제외한 영양제 및 보조제 성분의 복용을 엄격히 금합니다.</span> 이는 시술 과정에서 예상치 못한 반응이나 문제를 유발할 수 있으니 안전한 작업을 위해 반드시 준수해 주시기 바랍니다.
+                </div>
+                <div class="sk-lang-block en">
+                    We would like to express our deepest gratitude to our valued guests visiting <span style="color: #fff; font-weight: 600;">SEOUL KYUNG</span>.<br>
+                    To ensure the highest quality and best possible results, please ensure you get adequate rest and arrive in optimal physical condition.<br><br>
+                    Additionally, <span style="color: #ff5555; font-weight: 600;">the intake of dietary supplements, vitamins, or non-essential medications is strictly prohibited on the day before your session.</span> These substances may interfere with the procedure or cause unexpected complications. Thank you for your cooperation in ensuring a safe session.
+                </div>
+                <div class="sk-lang-block ja">
+                    <span style="color: #fff; font-weight: 600;">SEOUL KYUNG</span>をご愛顧いただき、誠にありがとうございます。<br>
+                    最上の仕上がりをお届けするため、ご来店前日は十分な睡眠をお取りいただき、万全의體調でお越しくださいますようお願い申し上げます。<br><br>
+                    また、<span style="color: #ff5555; font-weight: 600;">施術前日のサプリメントや栄養剤、健康食品などの服用は（必須医薬品を除き）固くお断りいたします。</span>これらは施術のプロセスにおいて予期せぬ影響を及ぼす可能性がございます。安全かつ円滑な施術のため、何卒ご理解とご協力をお願い申し上げます。
+                </div>
+                <div class="sk-lang-block zh">
+                    衷心感谢您光临 <span style="color: #fff; font-weight: 600;">SEOUL KYUNG</span>。<br>
+                    为了确保达到最佳的纹身效果，请在到店前保持充足的睡眠，并调整至良好的身体状态。<br><br>
+                    此外，<span style="color: #ff5555; font-weight: 600;">为确保安全，纹身前一天除必须服用的医疗药品外，严禁服用任何保健品、维生素及营养剂。</span>这些成分可能会在操作过程中引发不可预知的反应。为了您的安全与完美的纹身作品，请务必遵守。
+                </div>
+                <div class="sk-lang-block tw">
+                    衷心感謝您光臨 <span style="color: #fff; font-weight: 600;">SEOUL KYUNG</span>。<br>
+                    為了確保達到最佳的紋身效果，請在到店前保持充足的睡眠，並調整至良好的身體狀態。<br><br>
+                    此外，<span style="color: #ff5555; font-weight: 600;">為確保安全，紋身前一天除必須服用的醫療藥品外，嚴禁服用任何保健品、維他命及營養劑。</span>這些成分可能會在操作過程中引發不可預知的反應。為了您的安全與完美的紋身作品，請務必遵守。
+                </div>
+            </div>
+        </div>
+
+        <!-- 1. 주소 영역 -->
+        <div class="sk-info-section">
+            <div class="sk-info-title">ADDRESS / 주소</div>
+            <div class="sk-address-box">
+                <div class="sk-lang-block ko">
+                    <strong style="font-size: 17px; display: block; color: #fff; margin-bottom: 4px;">서울특별시 마포구 상수동 321-6, 1층</strong>
+                    <span style="font-size: 13px; color: #aaa;">상수역 도보 2분 거리</span>
+                </div>
+                <div class="sk-lang-block en">
+                    <strong style="font-size: 16px; display: block; color: #fff; margin-bottom: 4px;">1F, 321-6, Sangsu-dong, Mapo-gu, Seoul</strong>
+                    <span style="font-size: 12px; color: #aaa; display: block; margin-bottom: 8px;">(A 2-minute walk from Sangsu Station)</span>
+                    <div class="sk-lang-divider"></div>
+                    <span style="color: #666; font-size: 12px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
+                </div>
+                <div class="sk-lang-block ja">
+                    <strong style="font-size: 16px; display: block; color: #fff; margin-bottom: 4px;">ソウル特別市 麻浦区 上水洞 321-6, 1階</strong>
+                    <span style="font-size: 12px; color: #aaa; display: block; margin-bottom: 8px;">(上水駅から徒歩2分)</span>
+                    <div class="sk-lang-divider"></div>
+                    <span style="color: #666; font-size: 12px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
+                </div>
+                <div class="sk-lang-block zh">
+                    <strong style="font-size: 16px; display: block; color: #fff; margin-bottom: 4px;">首尔特别市 麻浦区 上水洞 321-6, 1楼</strong>
+                    <span style="font-size: 12px; color: #aaa; display: block; margin-bottom: 8px;">(上水站步行2分钟)</span>
+                    <div class="sk-lang-divider"></div>
+                    <span style="color: #666; font-size: 12px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
+                </div>
+                <div class="sk-lang-block tw">
+                    <strong style="font-size: 16px; display: block; color: #fff; margin-bottom: 4px;">首爾特別市 麻浦區 上水洞 321-6, 1樓</strong>
+                    <span style="font-size: 12px; color: #aaa; display: block; margin-bottom: 8px;">(上水站步行2分鐘)</span>
+                    <div class="sk-lang-divider"></div>
+                    <span style="color: #666; font-size: 12px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. 오시는 길 영역 -->
+        <div class="sk-info-section">
+            <div class="sk-info-title">DIRECTION / 오시는 길</div>
+            <div class="sk-notice-box">
+                <div class="sk-lang-block ko">
+                    건물 도착 시, <span style="color: #ffcc00; font-weight: 700;">4면 주차 차량들이 주차되어 있는 주차장 안쪽</span>으로 들어오시면 입구가 있습니다.
+                </div>
+                <div class="sk-lang-block en">
+                    Upon arriving at the building, please <span style="color: #ffcc00; font-weight: 700;">walk into the inner area of the parking lot</span> surrounded by cars on all four sides to find the entrance.
+                    <div class="sk-lang-divider"></div>
+                    <span style="color: #888; font-size: 13px;">[국문 안내] 건물 도착 시, 4면 주차 차량들이 주차되어 있는 주차장 안쪽으로 들어오시면 입구가 있습니다.</span>
+                </div>
+                <div class="sk-lang-block ja">
+                    建物に到着されましたら、車が四方に停まっている<span style="color: #ffcc00; font-weight: 700;">駐車場の奥の方へ</span>お進みください。奥に入り口がございます。
+                    <div class="sk-lang-divider"></div>
+                    <span style="color: #888; font-size: 13px;">[국문 안내] 건물 도착 시, 4면 주차 차량들이 주차되어 있는 주차장 안쪽으로 들어오시면 입구가 있습니다.</span>
+                </div>
+                <div class="sk-lang-block zh">
+                    到达大楼后，请往四面停放车辆的<span style="color: #ffcc00; font-weight: 700;">停车场内侧 (안쪽)</span> 走进来，即可看到入口。
+                    <div class="sk-lang-divider"></div>
+                    <span style="color: #888; font-size: 13px;">[국문 안내] 건물 도착 시, 4면 주차 차량들이 주차되어 있는 주차장 안쪽으로 들어오시면 입구가 있습니다.</span>
+                </div>
+                <div class="sk-lang-block tw">
+                    到達大樓後，請往四面停放車輛的<span style="color: #ffcc00; font-weight: 700;">停車場內側 (안쪽)</span> 走進來，即可看到入口。
+                    <div class="sk-lang-divider"></div>
+                    <span style="color: #888; font-size: 13px;">[국문 안내] 건물 도착 시, 4면 주차 차량들이 주차되어 있는 주차장 안쪽으로 들어오시면 입구가 있습니다.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. 링크 영역 -->
+        <div class="sk-info-section">
+            <div class="sk-info-title">LINKS / 안내 링크</div>
+            <div class="sk-map-buttons">
+                <a href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EB%A7%88%ED%8F%AC%EA%B5%AC%20%EC%83%81%EC%88%98%EB%8F%99%20321-6" target="_blank" class="sk-map-btn btn-n">NAVER MAP</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C+%EB%A7%88%ED%8F%AC%EA%B5%AC+%EC%83%81%EC%88%98%EB%8F%99+321-6" target="_blank" class="sk-map-btn btn-g">GOOGLE MAPS</a>
+            </div>
+            <a href="https://seoulkyung.com" target="_blank" class="sk-web-btn">WWW.SEOULKYUNG.COM</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showSkContent(lang) {
+        document.getElementById('sk-lang-selection').style.display = 'none';
+        document.getElementById('sk-content-area').style.display = 'block';
+        const blocks = document.querySelectorAll('.sk-lang-block');
+        blocks.forEach(b => b.style.display = 'none');
+        const selectedElements = document.querySelectorAll('.sk-lang-block.' + lang);
+        selectedElements.forEach(el => el.style.display = 'block');
+    }
+    function goSkBack() {
+        document.getElementById('sk-lang-selection').style.display = 'flex';
+        document.getElementById('sk-content-area').style.display = 'none';
+    }
+</script>
