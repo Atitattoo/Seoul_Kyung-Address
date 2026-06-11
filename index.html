@@ -1,136 +1,202 @@
-<style>
-    .sk-guide-wrapper {
-        width: 100%;
-        max-width: 500px;
-        margin: 0 auto;
-        color: #ffffff;
-        font-family: inherit;
-        text-align: center;
-    }
-    #sk-lang-selection {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    .sk-lang-card {
-        background: #1a1a1a;
-        border: 1px solid #333;
-        padding: 18px;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: 0.2s;
-        font-size: 15px;
-        color: #ccc;
-    }
-    .sk-lang-card:hover {
-        border-color: #ffcc00;
-        color: #fff;
-    }
-    #sk-content-area {
-        display: none;
-        text-align: left;
-    }
-    .sk-back-btn {
-        background: none;
-        border: 1px solid #444;
-        color: #888;
-        padding: 6px 12px;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 11px;
-        margin-bottom: 20px;
-    }
-    .sk-info-section {
-        margin-bottom: 25px;
-    }
-    .sk-info-title {
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 10px;
-        color: #fff;
-        border-bottom: 1px solid #333;
-        padding-bottom: 5px;
-    }
-    .sk-address-box {
-        background: #222;
-        padding: 20px;
-        border-radius: 8px;
-        border: 1px solid #333;
-        text-align: center;
-        line-height: 1.6;
-    }
-    .sk-condition-box {
-        background: #161616;
-        padding: 20px;
-        border-radius: 8px;
-        border: 1px solid #2a2a2a;
-        font-size: 13.5px;
-        line-height: 1.8;
-        color: #ddd;
-        text-align: left;
-    }
-    .sk-notice-box {
-        border-left: 3px solid #ffcc00;
-        background: #1a1915;
-        padding: 20px;
-        border-radius: 0 8px 8px 0;
-        font-size: 14px;
-        line-height: 1.7;
-        border-top: 1px solid #333;
-        border-right: 1px solid #333;
-        border-bottom: 1px solid #333;
-    }
-    .sk-lang-divider {
-        margin: 12px 0;
-        border-top: 1px dashed #444;
-    }
-    .sk-map-buttons {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        margin-bottom: 12px;
-    }
-    .sk-map-btn, .sk-web-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 12px 0;
-        border-radius: 6px;
-        font-size: 13px;
-        font-weight: 700;
-        text-decoration: none;
-        color: #ffffff !important; 
-        transition: opacity 0.2s ease;
-    }
-    .sk-map-btn:hover, .sk-web-btn:hover {
-        opacity: 0.85;
-    }
-    .btn-n { background-color: #03C75A; }
-    .btn-g { background-color: #4285F4; }
-    .sk-web-btn {
-        width: 100%;
-        background-color: #2a2a2a;
-        border: 1px solid #444;
-        letter-spacing: 1px;
-    }
-    .sk-lang-block { display: none; }
-</style>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEOUL KYUNG - Guide</title>
+    <style>
+        /* 배경 및 전체 레이아웃 리모델링 */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0b0b0b;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .sk-guide-wrapper {
+            width: 100%;
+            max-width: 420px;
+            padding: 40px 24px;
+            box-sizing: border-box;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        /* 서울경 로고 스타일 */
+        .sk-logo {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 4px;
+            margin-bottom: 45px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+        }
+
+        /* 언어 선택 첫 화면 중앙 배치 */
+        #sk-lang-selection {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            justify-content: center;
+        }
+
+        .sk-lang-card {
+            background: #161616;
+            border: 1px solid #262626;
+            padding: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+            color: #999;
+            letter-spacing: 1px;
+        }
+
+        .sk-lang-card:hover {
+            border-color: #ffffff;
+            color: #ffffff;
+            background: #1f1f1f;
+        }
+
+        /* 상세 안내 페이지 스타일 */
+        #sk-content-area {
+            display: none;
+            text-align: left;
+        }
+
+        .sk-back-btn {
+            background: none;
+            border: 1px solid #333;
+            color: #888;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-bottom: 30px;
+            transition: 0.2s;
+        }
+
+        .sk-back-btn:hover {
+            border-color: #666;
+            color: #fff;
+        }
+
+        .sk-info-section {
+            margin-bottom: 30px;
+        }
+
+        .sk-info-title {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #fff;
+            border-bottom: 1px solid #222;
+            padding-bottom: 6px;
+            letter-spacing: 1px;
+        }
+
+        .sk-address-box {
+            background: #141414;
+            padding: 24px;
+            border-radius: 10px;
+            border: 1px solid #222;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        .sk-condition-box {
+            background: #141414;
+            padding: 24px;
+            border-radius: 10px;
+            border: 1px solid #222;
+            font-size: 13.5px;
+            line-height: 1.8;
+            color: #b3b3b3;
+            text-align: left;
+        }
+
+        .sk-notice-box {
+            border-left: 3px solid #ffcc00;
+            background: #1a1915;
+            padding: 24px;
+            border-radius: 0 10px 10px 0;
+            font-size: 14px;
+            line-height: 1.7;
+            border-top: 1px solid #222;
+            border-right: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+        .sk-lang-divider {
+            margin: 14px 0;
+            border-top: 1px dashed #333;
+        }
+
+        .sk-map-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .sk-map-btn, .sk-web-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 0;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            color: #ffffff !important; 
+            transition: opacity 0.2s ease;
+        }
+
+        .sk-map-btn:hover, .sk-web-btn:hover {
+            opacity: 0.85;
+        }
+
+        .btn-n { background-color: #03C75A; }
+        .btn-g { background-color: #4285F4; }
+
+        .sk-web-btn {
+            width: 100%;
+            background-color: #1c1c1c;
+            border: 1px solid #333;
+            letter-spacing: 1px;
+        }
+
+        .sk-lang-block { display: none; }
+    </style>
+</head>
+<body>
 
 <div class="sk-guide-wrapper">
+    <!-- 메인 브랜드 타이틀 로고 -->
+    <div class="sk-logo">SEOUL KYUNG</div>
+
+    <!-- 1화면: 언어 선택 메뉴 -->
     <div id="sk-lang-selection">
         <div class="sk-lang-card" onclick="showSkContent('ko')">한국어 (KOREAN)</div>
-        <div class="sk-lang-card" onclick="showSkContent('en')">English</div>
+        <div class="sk-lang-card" onclick="showSkContent('en')">ENGLISH</div>
         <div class="sk-lang-card" onclick="showSkContent('ja')">日本語</div>
         <div class="sk-lang-card" onclick="showSkContent('zh')">简体中文</div>
         <div class="sk-lang-card" onclick="showSkContent('tw')">繁體中文</div>
     </div>
 
+    <!-- 2화면: 안내 상세 내역 -->
     <div id="sk-content-area">
-        <button class="sk-back-btn" onclick="goSkBack()">← Back</button>
+        <button class="sk-back-btn" onclick="goSkBack()">← BACK</button>
 
         <!-- 0. 방문 전 주의사항 -->
         <div class="sk-info-section">
-            <div class="sk-info-title">NOTICE / 방문 전 안내사항</div>
+            <div class="sk-info-title">NOTICE</div>
             <div class="sk-condition-box">
                 <div class="sk-lang-block ko">
                     저희 <span style="color: #fff; font-weight: 600;">SEOUL KYUNG</span>을 찾아주신 고객님께 깊은 감사의 말씀을 드립니다.<br>
@@ -162,7 +228,7 @@
 
         <!-- 1. 주소 영역 -->
         <div class="sk-info-section">
-            <div class="sk-info-title">ADDRESS / 주소</div>
+            <div class="sk-info-title">ADDRESS</div>
             <div class="sk-address-box">
                 <div class="sk-lang-block ko">
                     <strong style="font-size: 17px; display: block; color: #fff; margin-bottom: 4px;">서울특별시 마포구 상수동 321-6, 1층</strong>
@@ -172,32 +238,32 @@
                     <strong style="font-size: 16px; display: block; color: #fff; margin-bottom: 4px;">1F, 321-6, Sangsu-dong, Mapo-gu, Seoul</strong>
                     <span style="font-size: 12px; color: #aaa; display: block; margin-bottom: 8px;">(A 2-minute walk from Sangsu Station)</span>
                     <div class="sk-lang-divider"></div>
-                    <span style="color: #666; font-size: 12px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
+                    <span style="color: #555; font-size: 12px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
                 </div>
                 <div class="sk-lang-block ja">
                     <strong style="font-size: 16px; display: block; color: #fff; margin-bottom: 4px;">ソウル特別市 麻浦区 上水洞 321-6, 1階</strong>
                     <span style="font-size: 12px; color: #aaa; display: block; margin-bottom: 8px;">(上水駅から徒歩2分)</span>
                     <div class="sk-lang-divider"></div>
-                    <span style="color: #666; font-size: 12px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
+                    <span style="color: #555; font-size: 12px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
                 </div>
                 <div class="sk-lang-block zh">
                     <strong style="font-size: 16px; display: block; color: #fff; margin-bottom: 4px;">首尔特别市 麻浦区 上水洞 321-6, 1楼</strong>
                     <span style="font-size: 12px; color: #aaa; display: block; margin-bottom: 8px;">(上水站步行2分钟)</span>
                     <div class="sk-lang-divider"></div>
-                    <span style="color: #666; font-size: 12px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
+                    <span style="color: #555; font-size: 12px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
                 </div>
                 <div class="sk-lang-block tw">
                     <strong style="font-size: 16px; display: block; color: #fff; margin-bottom: 4px;">首爾特別市 麻浦區 上水洞 321-6, 1樓</strong>
                     <span style="font-size: 12px; color: #aaa; display: block; margin-bottom: 8px;">(上水站步行2分鐘)</span>
                     <div class="sk-lang-divider"></div>
-                    <span style="color: #666; font-size: 12px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
+                    <span style="color: #555; font-size: 12px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
                 </div>
             </div>
         </div>
 
         <!-- 2. 오시는 길 영역 -->
         <div class="sk-info-section">
-            <div class="sk-info-title">DIRECTION / 오시는 길</div>
+            <div class="sk-info-title">DIRECTION</div>
             <div class="sk-notice-box">
                 <div class="sk-lang-block ko">
                     건물 도착 시, <span style="color: #ffcc00; font-weight: 700;">4면 주차 차량들이 주차되어 있는 주차장 안쪽</span>으로 들어오시면 입구가 있습니다.
@@ -227,7 +293,7 @@
 
         <!-- 3. 링크 영역 -->
         <div class="sk-info-section">
-            <div class="sk-info-title">LINKS / 안내 링크</div>
+            <div class="sk-info-title">LINKS</div>
             <div class="sk-map-buttons">
                 <a href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EB%A7%88%ED%8F%AC%EA%B5%AC%20%EC%83%81%EC%88%98%EB%8F%99%20321-6" target="_blank" class="sk-map-btn btn-n">NAVER MAP</a>
                 <a href="https://www.google.com/maps/search/?api=1&query=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C+%EB%A7%88%ED%8F%AC%EA%B5%AC+%EC%83%81%EC%88%98%EB%8F%99+321-6" target="_blank" class="sk-map-btn btn-g">GOOGLE MAPS</a>
@@ -251,3 +317,6 @@
         document.getElementById('sk-content-area').style.display = 'none';
     }
 </script>
+
+</body>
+</html>
