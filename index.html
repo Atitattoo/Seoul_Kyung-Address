@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEOUL KYUNG - Guide</title>
+    <!-- 로고 전용 Cinzel 폰트 유지 -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
             background-color: #111111; 
-            font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
+            /* 기본 시스템 폰트를 언어 선택창과 동일하게 매끄러운 산세리프 스타일로 통일 */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Malgun Gothic", sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -32,6 +34,7 @@
             text-align: center;
         }
 
+        /* 메인 로고 폰트 패밀리는 유지 */
         .sk-main-logo {
             font-family: 'Cinzel', 'Times New Roman', serif;
             font-size: 28px;
@@ -43,6 +46,7 @@
             margin-bottom: 6px;
         }
 
+        /* 서브 로고 폰트 패밀리 유지 */
         .sk-sub-logo {
             font-family: 'Cinzel', 'Times New Roman', serif;
             font-size: 13px;
@@ -104,15 +108,16 @@
             margin-bottom: 35px;
         }
 
+        /* NOTICE, ADDRESS 등 대제목 폰트를 언어 선택창과 같은 스타일로 변경 */
         .sk-info-title {
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 600;
             margin-bottom: 14px;
             color: #FFFFFF; 
             border-bottom: 1px solid #555555; 
             padding-bottom: 8px;
-            letter-spacing: 2px;
-            font-family: 'Cinzel', serif;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
 
         .sk-address-box {
@@ -135,7 +140,6 @@
             text-align: left;
         }
 
-        /* 대표님 요청 반영: 왼쪽 흰색 바(border-left)를 제거하고 일반 테두리로 사면 통일 */
         .sk-notice-box {
             background: #1A1A1A;
             padding: 26px;
@@ -157,6 +161,7 @@
             margin-bottom: 14px;
         }
 
+        /* 하단 네이버, 구글, 웹사이트 버튼들도 언어 선택창과 100% 동일한 서체 핏 적용 */
         .sk-map-btn, .sk-web-btn {
             display: flex;
             align-items: center;
@@ -166,9 +171,9 @@
             font-weight: 600;
             text-decoration: none;
             transition: all 0.2s ease;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             box-sizing: border-box;
-            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
         }
 
         .sk-map-btn {
@@ -232,7 +237,7 @@
                 </div>
                 <div class="sk-lang-block ja">
                     <span style="color: #fff; font-weight: 700;">SEOUL KYUNG</span>をご愛顧いただき、誠にありがとうございます。<br>
-                    最上の仕上がりをお届けするため、ご来店前日は十分な睡眠をお取りいただき、万全の体調でお越しくださいますようお願い申し上げます。<br><br>
+                    最上の仕上がりをお届けするため、ご来店前日は十分な睡眠をお取りいただき、万全의 体調でお越しくださいますようお願い申し上げます。<br><br>
                     また、<span style="color: #FF4D4D; font-weight: 700;">施術前日のサプリメントや栄養剤、健康食品などの服用は（必須医薬品を除き）固くお断りいたします。</span>これらは施術のプロセスにおいて予期せぬ影響を及ぼす可能性がございます。安全かつ円滑な施術のため、何卒ご理解とご協力をお願い申し上げます。
                 </div>
                 <div class="sk-lang-block zh">
@@ -275,7 +280,7 @@
                     <span style="color: #AAAAAA; font-size: 12px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
                 </div>
                 <div class="sk-lang-block tw">
-                    <strong style="font-size: 16px; display: block; color: #fff; margin-bottom: 6px; font-weight: 600;">首爾特別市 麻浦區 上수동 321-6, 1樓</strong>
+                    <strong style="font-size: 16px; display: block; color: #fff; margin-bottom: 6px; font-weight: 600;">首爾特別市 麻浦區 上水洞 321-6, 1樓</strong>
                     <span style="font-size: 13.5px; color: #CCCCCC; display: block; margin-bottom: 8px;">(上水站步行2分鐘)</span>
                     <div class="sk-lang-divider"></div>
                     <span style="color: #AAAAAA; font-size: 12px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
@@ -283,7 +288,7 @@
             </div>
         </div>
 
-        <!-- 2. 오시는 길 영역 (대표님 피드백 반영 완료) -->
+        <!-- 2. 오시는 길 영역 -->
         <div class="sk-info-section">
             <div class="sk-info-title">DIRECTION</div>
             <div class="sk-notice-box">
@@ -301,12 +306,12 @@
                     <span style="color: #BBBBBB; font-size: 12.5px;">[국문 안내] 건물 도착 시, 4면 주차 차량들이 주차되어 있는 주차장 안쪽에 나무문으로 들어오시면 입구가 있습니다.</span>
                 </div>
                 <div class="sk-lang-block zh">
-                    到达大楼后，请往四面停放车辆的<span style="color: #ffffff; font-weight: 700; text-decoration: underline;">停车场内侧走，并从木门 (나무문) 进入</span>即可看到入口。
+                    到达大楼后，请往四面停放车辆的<span style="color: #ffffff; font-weight: 700; text-decoration: underline;">停车场内侧走，并从木门 (나무门) 进入</span>即可看到入口。
                     <div class="sk-lang-divider"></div>
                     <span style="color: #BBBBBB; font-size: 12.5px;">[국문 안내] 건물 도착 시, 4면 주차 차량들이 주차되어 있는 주차장 안쪽에 나무문으로 들어오시면 입구가 있습니다.</span>
                 </div>
                 <div class="sk-lang-block tw">
-                    到達大樓後，請往四面停放車輛的<span style="color: #ffffff; font-weight: 700; text-decoration: underline;">停車場內側走，並從木門 (나무문) 進入</span>即可看到入口。
+                    到達大樓後，請往四面停放車輛的<span style="color: #ffffff; font-weight: 700; text-decoration: underline;">停車場內側走，並從木門 (나무門) 進入</span>即可看到入口。
                     <div class="sk-lang-divider"></div>
                     <span style="color: #BBBBBB; font-size: 12.5px;">[국문 안내] 건물 도착 시, 4면 주차 차량들이 주차되어 있는 주차장 안쪽에 나무문으로 들어오시면 입구가 있습니다.</span>
                 </div>
