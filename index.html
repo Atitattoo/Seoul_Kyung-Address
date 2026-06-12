@@ -29,9 +29,7 @@
             text-align: center;
         }
 
-        /* ----------------------------------------------------
-           [SEOUL KYUNG / SOUTH KOREA] 웹사이트 로고 완벽 싱크
-        ---------------------------------------------------- */
+        /* [SEOUL KYUNG / SOUTH KOREA] 웹사이트 로고 완벽 싱크 */
         .sk-logo-container {
             margin-bottom: 55px;
             text-align: center;
@@ -58,8 +56,6 @@
             opacity: 0.9;
             padding-left: 4px; /* 자간 때문에 우측으로 쏠리는 현상 방지 밸런싱 */
         }
-
-        /* ---------------------------------------------------- */
 
         /* 웹사이트 스타일의 미니멀 언어 선택 메뉴 */
         #sk-lang-selection {
@@ -94,10 +90,11 @@
             text-align: left;
         }
 
+        /* 가독성을 대폭 강화한 BACK 버튼 */
         .sk-back-btn {
             background: none;
             border: none;
-            color: #555555;
+            color: #999999; /* 기존 연한 회색에서 더 또렷하고 선명하게 수정 */
             padding: 0;
             cursor: pointer;
             font-size: 12px;
@@ -107,6 +104,7 @@
             transition: 0.2s;
             display: inline-block;
             border-bottom: 1px solid transparent;
+            font-weight: 500;
         }
 
         .sk-back-btn:hover {
@@ -173,24 +171,32 @@
             margin-bottom: 14px;
         }
 
+        /* 공식 홈페이지 무드에 맞춘 블랙 앤 화이트 모노톤 지도 버튼 */
         .sk-map-btn, .sk-web-btn {
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 14px 0;
             font-size: 11px;
-            font-weight: 600;
+            font-weight: 400;
             text-decoration: none;
-            color: #ffffff !important; 
             transition: all 0.3s ease;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            box-sizing: border-box;
+            font-family: 'Cinzel', serif;
         }
 
-        .btn-n { background-color: #03C75A; }
-        .btn-g { background-color: #4285F4; }
+        /* 미니멀한 외곽선 스타일로 통일 */
+        .sk-map-btn {
+            background-color: transparent;
+            border: 1px solid #222222;
+            color: #777777 !important;
+        }
 
         .sk-map-btn:hover {
-            opacity: 0.85;
+            border-color: #F4F1EA;
+            color: #F4F1EA !important;
+            background-color: #161616;
         }
 
         .sk-web-btn {
@@ -198,8 +204,6 @@
             background-color: transparent;
             border: 1px solid #222222;
             color: #777777 !important;
-            font-family: 'Cinzel', serif;
-            letter-spacing: 2px;
         }
 
         .sk-web-btn:hover {
@@ -330,12 +334,12 @@
             </div>
         </div>
 
-        <!-- 3. 링크 영역 -->
+        <!-- 3. 링크 영역 (완벽 모노톤화) -->
         <div class="sk-info-section">
             <div class="sk-info-title">LINKS</div>
             <div class="sk-map-buttons">
-                <a href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EB%A7%88%ED%8F%AC%EA%B5%AC%20%EC%83%81%EC%88%98%EB%8F%99%20321-6" target="_blank" class="sk-map-btn btn-n">NAVER MAP</a>
-                <a href="https://www.google.com/maps/search/?api=1&query=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C+%EB%A7%88%ED%8F%AC%EA%B5%AC+%EC%83%81%EC%88%98%EB%8F%99+321-6" target="_blank" class="sk-map-btn btn-g">GOOGLE MAPS</a>
+                <a href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EB%A7%88%ED%8F%AC%EA%B5%AC%20%EC%83%81%EC%88%98%EB%8F%99%20321-6" target="_blank" class="sk-map-btn">NAVER MAP</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C+%EB%A7%88%ED%8F%AC%EA%B5%AC+%EC%83%81%EC%88%98%EB%8F%99+321-6" target="_blank" class="sk-map-btn">GOOGLE MAPS</a>
             </div>
             <a href="https://seoulkyung.com" target="_blank" class="sk-web-btn">WWW.SEOULKYUNG.COM</a>
         </div>
