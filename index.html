@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEOUL KYUNG - Guide</title>
+    <!-- 서울경 웹사이트 폰트 스타일 구현을 위한 고급 Serif 구글 폰트 로드 -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
     <style>
         /* 글로벌 웹사이트 아이덴티티 반영 */
         body {
             margin: 0;
             padding: 0;
-            background-color: #000000; /* 완전한 블랙으로 통일 */
-            font-family: "Garamond", "Didot", "Times New Roman", serif, -apple-system, BlinkMacSystemFont;
+            background-color: #111111; /* 웹사이트 로고 배경의 묵직한 다크 톤 반영 */
+            font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -27,15 +29,37 @@
             text-align: center;
         }
 
-        /* seoulkyung.com 시그니처 폰트 스타일 */
-        .sk-logo {
-            font-size: 24px;
-            font-weight: 300; /* 가늘고 고급스러운 라인 */
-            letter-spacing: 7px; /* 넓은 자간으로 하이엔드 감성 연출 */
-            margin-bottom: 60px;
-            color: #ffffff;
-            text-transform: uppercase;
+        /* ----------------------------------------------------
+           [SEOUL KYUNG / SOUTH KOREA] 웹사이트 로고 완벽 싱크
+        ---------------------------------------------------- */
+        .sk-logo-container {
+            margin-bottom: 55px;
+            text-align: center;
         }
+
+        .sk-main-logo {
+            font-family: 'Cinzel', 'Times New Roman', serif;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 5px;
+            color: #F4F1EA; /* 로고 고유의 우아한 아이보리 화이트 컬러 적용 */
+            text-transform: uppercase;
+            line-height: 1.2;
+            margin-bottom: 6px;
+        }
+
+        .sk-sub-logo {
+            font-family: 'Cinzel', 'Times New Roman', serif;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 8px; /* 부제목 특유의 더 넓은 자간 밸런스 */
+            color: #F4F1EA;
+            text-transform: uppercase;
+            opacity: 0.9;
+            padding-left: 4px; /* 자간 때문에 우측으로 쏠리는 현상 방지 밸런싱 */
+        }
+
+        /* ---------------------------------------------------- */
 
         /* 웹사이트 스타일의 미니멀 언어 선택 메뉴 */
         #sk-lang-selection {
@@ -48,7 +72,7 @@
 
         .sk-lang-card {
             background: transparent;
-            border-bottom: 1px solid #1a1a1a; /* 선으로만 이루어진 미니멀 디자인 */
+            border-bottom: 1px solid #222222; /* 선으로만 이루어진 미니멀 디자인 */
             padding: 16px 0;
             cursor: pointer;
             transition: all 0.4s ease;
@@ -60,15 +84,14 @@
         }
 
         .sk-lang-card:hover {
-            border-bottom-color: #ffffff;
-            color: #ffffff;
+            border-bottom-color: #F4F1EA;
+            color: #F4F1EA;
         }
 
-        /* 상세 안내 레이아웃 고도화 */
+        /* 상세 안내 레이아웃 */
         #sk-content-area {
             display: none;
             text-align: left;
-            font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif; /* 본문은 가독성 위주 */
         }
 
         .sk-back-btn {
@@ -100,26 +123,26 @@
             font-weight: 400;
             margin-bottom: 14px;
             color: #ffffff;
-            border-bottom: 1px solid #111111;
+            border-bottom: 1px solid #222222;
             padding-bottom: 8px;
             letter-spacing: 2px;
-            font-family: "Garamond", "Times New Roman", serif;
+            font-family: 'Cinzel', serif;
         }
 
         .sk-address-box {
-            background: #0a0a0a;
+            background: #161616;
             padding: 26px;
-            border-radius: 0px; /* 라운딩을 없애거나 최소화하여 모던함 강조 */
-            border: 1px solid #161616;
+            border-radius: 0px;
+            border: 1px solid #222222;
             text-align: center;
             line-height: 1.8;
         }
 
         .sk-condition-box {
-            background: #0a0a0a;
+            background: #161616;
             padding: 26px;
             border-radius: 0px;
-            border: 1px solid #161616;
+            border: 1px solid #222222;
             font-size: 13px;
             line-height: 1.9;
             color: #999999;
@@ -127,20 +150,20 @@
         }
 
         .sk-notice-box {
-            border-left: 2px solid #ffffff; /* 강렬한 노란색 대신 화이트/그레이로 정돈 */
-            background: #0a0a0a;
+            border-left: 2px solid #F4F1EA;
+            background: #161616;
             padding: 26px;
             font-size: 13.5px;
             line-height: 1.8;
-            border-top: 1px solid #161616;
-            border-right: 1px solid #161616;
-            border-bottom: 1px solid #161616;
+            border-top: 1px solid #222222;
+            border-right: 1px solid #222222;
+            border-bottom: 1px solid #222222;
             color: #999999;
         }
 
         .sk-lang-divider {
             margin: 16px 0;
-            border-top: 1px dashed #222222;
+            border-top: 1px dashed #2d2d2d;
         }
 
         .sk-map-buttons {
@@ -175,14 +198,14 @@
             background-color: transparent;
             border: 1px solid #222222;
             color: #777777 !important;
-            font-family: "Garamond", "Times New Roman", serif;
+            font-family: 'Cinzel', serif;
             letter-spacing: 2px;
         }
 
         .sk-web-btn:hover {
-            border-color: #ffffff;
-            color: #ffffff !important;
-            background-color: #0a0a0a;
+            border-color: #F4F1EA;
+            color: #F4F1EA !important;
+            background-color: #161616;
         }
 
         .sk-lang-block { display: none; }
@@ -191,8 +214,11 @@
 <body>
 
 <div class="sk-guide-wrapper">
-    <!-- 시그니처 로고 타입 -->
-    <div class="sk-logo">SEOUL KYUNG</div>
+    <!-- 대표님 웹사이트와 100% 동일하게 교체된 상단 로고 파트 -->
+    <div class="sk-logo-container">
+        <div class="sk-main-logo">SEOUL KYUNG</div>
+        <div class="sk-sub-logo">SOUTH KOREA</div>
+    </div>
 
     <!-- 1화면: 공식 웹사이트 핏 언어 선택 목록 -->
     <div id="sk-lang-selection">
@@ -233,7 +259,7 @@
                 </div>
                 <div class="sk-lang-block tw">
                     衷心感謝您光臨 <span style="color: #fff; font-weight: 600;">SEOUL KYUNG</span>。<br>
-                    為了確保達到最佳的紋身效果，請在到店前保持充足的睡眠，並調整至良好的身體狀態。<br><br>
+                    為了確保達到最佳的紋身效果，請在到店前保持充足의 睡眠，並調整至良好的身體狀態。<br><br>
                     此外，<span style="color: #ff5555; font-weight: 600;">為確保安全，紋身前一天除必須服用的醫療藥品外，嚴禁服用任何保健品、維太命及營養劑。</span>這些成分可能會在操作過程中引發不可預知的反應。為了您的安全與完美的紋身作品，請務必遵守。
                 </div>
             </div>
@@ -266,7 +292,7 @@
                     <span style="color: #444; font-size: 11px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
                 </div>
                 <div class="sk-lang-block tw">
-                    <strong style="font-size: 15px; display: block; color: #fff; margin-bottom: 4px; font-weight: 500;">首爾特別市 麻浦區 上水洞 321-6, 1樓</strong>
+                    <strong style="font-size: 15px; display: block; color: #fff; margin-bottom: 4px; font-weight: 500;">首爾特別市 麻浦區 上수동 321-6, 1樓</strong>
                     <span style="font-size: 12px; color: #666; display: block; margin-bottom: 8px;">(上水站步行2分鐘)</span>
                     <div class="sk-lang-divider"></div>
                     <span style="color: #444; font-size: 11px; display: block;">[KOR] 서울특별시 마포구 상수동 321-6, 1층</span>
@@ -326,7 +352,6 @@
         selectedElements.forEach(el => el.style.display = 'block');
     }
     
-    // 백버튼 스크립트 수정
     document.querySelector('.sk-back-btn').addEventListener('click', function() {
         document.getElementById('sk-lang-selection').style.display = 'flex';
         document.getElementById('sk-content-area').style.display = 'none';
